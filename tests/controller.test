@@ -1,0 +1,9 @@
+# reset start int3 int2 int1 int0 dec3 dec2 dec1 dec0 dpEnd
+# end error acidOn basicOn dpReset
+
+# reset
+sim 1 1 1 1 1 1 1 1 1 1 1
+echo ----------------------
+echo sim 1 1 1 1 1 1 1 1 1 1 1
+echo expected NEXT_STATE -> RESET 
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 0 dpReset: 0

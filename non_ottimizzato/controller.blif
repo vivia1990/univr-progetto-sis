@@ -1,0 +1,54 @@
+.model controller
+
+.inputs reset start int3 int2 int1 int0 dec3 dec2 dec1 dec0 dpEnd
+.outputs end error acidOn basicOn dpReset
+
+.start_kiss
+
+.i 11 # Number of inputs
+.o 5 # Number of outputs
+.s 4
+.p 21
+.r RESET
+
+
+# reset su reset
+1---------- RESET RESET 00000
+# ph non valido
+01111-1---0 RESET FINE_OPERAZIONE 11000 
+01111--1--0 RESET FINE_OPERAZIONE 11000
+01111---1-0 RESET FINE_OPERAZIONE 11000
+01111----10 RESET FINE_OPERAZIONE 11000
+# 7 <= ph <= 8
+01100000000 RESET FINE_OPERAZIONE 10000
+010111----0 RESET FINE_OPERAZIONE 10000
+# ph > 8
+0110--1---0 RESET ACIDO_ON 00100
+0110---1--0 RESET ACIDO_ON 00100
+01110---1-0 RESET ACIDO_ON 00100
+0110-----10 RESET ACIDO_ON 00100
+# ph < 7
+010110----0 RESET BASICO_ON 00010
+01010-----0 RESET BASICO_ON 00010
+0100------0 RESET BASICO_ON 00010
+#acid to acid
+0---------0 ACIDO_ON ACIDO_ON 00100
+#basic to basic
+0---------0 BASICO_ON BASICO_ON 00010
+#acid to reset
+1---------- ACIDO_ON RESET 00001
+#basic to reset
+1---------- BASICO_ON RESET 00001
+##fine to reset
+1---------- FINE_OPERAZIONE RESET 00001
+#basic to fine
+0---------1 BASICO_ON FINE_OPERAZIONE 10000
+##acid to fine
+0---------1 ACIDO_ON FINE_OPERAZIONE 10000
+
+
+
+.end_kiss
+
+
+.end

@@ -7,132 +7,132 @@ echo ----------------------
 # reset -> reset
 echo sim 1 1 1 1 1 1 1 1 1 1 1
 echo expected NEXT_STATE -> RESET 
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 1
 sim 1 1 1 1 1 1 1 1 1 1 1
 echo ----------------------
 
 # reset -> reset
 echo sim 0 1 1 1 1 1 1 1 1 1 1
 echo expected NEXT_STATE -> RESET 
-echo expected OUTPUT -> end: 1 error: 1 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 1 acidOn: 0 basicOn: 0 dpReset: dpStart: 1
 sim 0 1 1 1 1 1 1 1 1 1 1
 echo ----------------------
 
 # reset -> reset
 echo sim 0 1 1 0 0 0 0 0 0 0 0
 echo expected NEXT_STATE -> RESET 
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 1
 sim 0 1 1 0 0 0 0 0 0 0 0
 echo ----------------------
 
 # reset -> reset
 echo sim 0 1 0 1 1 1 1 0 0 1 0
 echo expected NEXT_STATE -> RESET 
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 1
 sim 0 1 0 1 1 1 1 0 0 1 0
 echo ----------------------
 
 # reset -> basico_on
 echo sim 0 1 0 1 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> basico_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0 dpStart: 1
 sim 0 1 0 1 0 1 1 0 0 1 0
 echo ----------------------
 
 # basico_on -> basico_on
 echo sim 0 1 0 1 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> basico_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0 dpStart: 0
 sim 0 1 0 1 0 1 1 0 0 1 0
 echo ----------------------
 
 # basico_on -> reset
 echo sim 0 1 0 1 1 1 1 0 0 1 1
 echo expected NEXT_STATE -> reset
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 0
 sim 0 1 0 1 1 1 1 0 0 1 1
 echo ----------------------
 
 # reset -> acido_on
 echo sim 0 1 1 1 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> acido_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0 dpStart: 1
 sim 0 1 1 1 0 1 1 0 0 1 0
 echo ----------------------
 
 # acido_on -> acido_on
 echo sim 0 1 1 1 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> acido_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0 dpStart: 0
 sim 0 1 1 1 0 1 1 0 0 1 0
 echo ----------------------
 
 # acido_on -> reset
 echo sim 0 1 1 1 0 1 1 0 0 1 1
 echo expected NEXT_STATE -> reset
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 0
 sim 0 1 1 1 0 1 1 0 0 1 1
 echo ----------------------
 
 # reset -> acido_on
 echo sim 0 1 1 0 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> acido_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0 dpStart: 1
 sim 0 1 1 0 0 1 1 0 0 1 0
 echo ----------------------
 
 # acido_on -> reset
 echo sim 1 1 1 0 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> reset
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 0 dpReset: 1
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 0 dpReset: 1 dpStart: 0
 sim 1 1 1 0 0 1 1 0 0 1 0
 echo ----------------------
 
 # reset -> acido_on
 echo sim 0 1 1 1 1 0 0 0 0 0 0
 echo expected NEXT_STATE -> acido_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 1 basicOn: 0 dpReset: 0 dpStart: 1
 sim 0 1 1 1 1 0 0 0 0 0 0
 echo ----------------------
 
 # acido_on -> reset
 echo sim 0 1 1 1 0 1 1 0 0 1 1
 echo expected NEXT_STATE -> reset
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 0
 sim 0 1 1 1 0 1 1 0 0 1 1
 echo ----------------------
 
 # reset -> basico_on
 echo sim 0 1 0 0 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> basico_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0 dpStart: 1
 sim 0 1 0 0 0 1 1 0 0 1 0
 echo ----------------------
 
 # basico_on -> basico_on
 echo sim 0 1 0 0 0 1 1 0 0 1 0
 echo expected NEXT_STATE -> basico_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0 dpStart: 0
 sim 0 1 0 0 0 1 1 0 0 1 0
 echo ----------------------
 
 # basico_on -> reset
 echo sim 0 1 0 0 0 1 1 0 0 1 1
 echo expected NEXT_STATE -> reset
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 0 dpStart: 0
 sim 0 1 0 0 0 1 1 0 0 1 1
 echo ----------------------
 
 # reset -> basico_on
 echo sim 0 1 0 1 1 0 1 1 1 1 0
 echo expected NEXT_STATE -> basico_on
-echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0
+echo expected OUTPUT -> end: 0 error: 0 acidOn: 0 basicOn: 1 dpReset: 0 dpStart: 1
 sim 0 1 0 1 1 0 1 1 1 1 0
 echo ----------------------
 
 # basico_on -> reset
 echo sim 0 1 0 1 1 0 1 1 1 1 1
 echo expected NEXT_STATE -> reset
-echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 1
+echo expected OUTPUT -> end: 1 error: 0 acidOn: 0 basicOn: 0 dpReset: 1 dpStart: 0
 sim 0 1 0 1 1 0 1 1 1 1 1
 echo ----------------------

@@ -1,23 +1,24 @@
 .model controller
 
 .inputs reset start int3 int2 int1 int0 dec3 dec2 dec1 dec0 dpEnd
-.outputs end error acidOn basicOn dpReset
+.outputs end error acidOn basicOn dpReset dpStart
 
 .start_kiss
 
 .i 11 # Number of inputs
 .o 5 # Number of outputs
 .s 3
-.p 20
+.p 21
 .r RESET
 
 # reset su reset
 1---------- RESET RESET 00000
+00000000000 RESET RESET 00000
 # ph non valido
-01111-1---- RESET RESET 11000 
-01111--1--- RESET RESET 11000
-01111---1-- RESET RESET 11000
-01111----1- RESET RESET 11000
+01111-1---- RESET RESET 01000 
+01111--1--- RESET RESET 01000
+01111---1-- RESET RESET 01000
+01111----1- RESET RESET 01000
 # 7 <= ph <= 8
 0110000000- RESET RESET 10000
 010111----- RESET RESET 10000

@@ -1,0 +1,6 @@
+.model register 
+.inputs RegIn
+.outputs RegOut
+.latch RegIn RegOut re NIL 0
+
+.end

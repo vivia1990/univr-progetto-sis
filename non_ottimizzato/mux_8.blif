@@ -1,0 +1,29 @@
+.model mux_8
+.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0 S
+.outputs O7 O6 O5 O4 O3 O2 O1 O0
+.names S A7 B7 O7
+11- 1
+0-1 1
+.names S A6 B6 O6
+11- 1
+0-1 1
+.names S A5 B5 O5
+11- 1
+0-1 1
+.names S A4 B4 O4
+11- 1
+0-1 1
+.names S A3 B3 O3
+11- 1
+0-1 1
+.names S A2 B2 O2
+11- 1
+0-1 1
+.names S A1 B1 O1
+11- 1
+0-1 1
+.names S A0 B0 O0
+11- 1
+0-1 1
+
+.end

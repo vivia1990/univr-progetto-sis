@@ -1,4 +1,4 @@
-.model sommatore_1
+.model adder_1
 .inputs a b cin 
 .outputs sum cout
 .names a b k

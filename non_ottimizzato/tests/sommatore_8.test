@@ -1,7 +1,7 @@
 # Sa7 Sa6 Sa5 Sa4 Sa3 Sa2 Sa1 Sa0 Sb7 Sb6 Sb5 Sb4 Sb3 Sb2 Sb1 Sb0 cin
 # Sout7 Sout6 Sout5 Sout4 Sout3 Sout2 Sout1 Sout0 carout
 
-rl sommatore_8.test
+rl adder_8.test
 
 echo -----------------------------------
 echo sim 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0

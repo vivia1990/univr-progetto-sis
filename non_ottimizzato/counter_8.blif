@@ -1,5 +1,5 @@
 .model counter_8
-.inputs Cstart Cend
+.inputs Cstart Cend Creset
 .outputs Cout7 Cout6 Cout5 Cout4 Cout3 Cout2 Cout1 Cout0
 
 .subckt const_0 C0=const0 
@@ -7,15 +7,15 @@
 
 .subckt mux_8 A7=const0 A6=const0 A5=const0 A4=const0 A3=const0 A2=const0 A1=const0 A0=const1 B7=sumout7 B6=sumout6 B5=sumout5 B4=sumout4 B3=sumout3 B2=sumout2 B1=sumout1 B0=sumout0 O7=OutMux7 O6=OutMux6 O5=OutMux5 O4=OutMux4 O3=OutMux3 O2=OutMux2 O1=OutMux1 O0=OutMux0 S=Cstart
 
-.subckt register_8 Rin7=OutMux7 Rin6=OutMux6 Rin5=OutMux5 Rin4=OutMux4 Rin3=OutMux3 Rin2=OutMux2 Rin1=OutMux1 Rin0=OutMux0 Rout0=RegOut0 Rout1=RegOut1 Rout2=RegOut2 Rout3=RegOut3 Rout4=RegOut4 Rout5=RegOut5 Rout6=RegOut6 Rout7=RegOut7 # todo invertire
+.subckt register_8 Rin7=OutMux7 Rin6=OutMux6 Rin5=OutMux5 Rin4=OutMux4 Rin3=OutMux3 Rin2=OutMux2 Rin1=OutMux1 Rin0=OutMux0 Rout0=RegOut0 Rout1=RegOut1 Rout2=RegOut2 Rout3=RegOut3 Rout4=RegOut4 Rout5=RegOut5 Rout6=RegOut6 Rout7=RegOut7 Reset=Creset # todo invertire
 
-.subckt sommatore_8 Sa0=const1 Sa1=const0 Sa2=const0 Sa3=const0 Sa4=const0 Sa5=const0 Sa6=const0 Sa7=const0 Sb0=RegOut0 Sb1=RegOut1 Sb2=RegOut2 Sb3=RegOut3 Sb4=RegOut4 Sb5=RegOut5 Sb6=RegOut6 Sb7=RegOut7 cin=const0 Sout0=sumout0 Sout1=sumout1 Sout2=sumout2 Sout3=sumout3 Sout4=sumout4 Sout5=sumout5 Sout6=sumout6 Sout7=sumout7
+.subckt adder_8 Sa0=const1 Sa1=const0 Sa2=const0 Sa3=const0 Sa4=const0 Sa5=const0 Sa6=const0 Sa7=const0 Sb0=RegOut0 Sb1=RegOut1 Sb2=RegOut2 Sb3=RegOut3 Sb4=RegOut4 Sb5=RegOut5 Sb6=RegOut6 Sb7=RegOut7 cin=const0 Sout0=sumout0 Sout1=sumout1 Sout2=sumout2 Sout3=sumout3 Sout4=sumout4 Sout5=sumout5 Sout6=sumout6 Sout7=sumout7
 
 .subckt mux_8 A7=RegOut7 A6=RegOut6 A5=RegOut5 A4=RegOut4 A3=RegOut3 A2=RegOut2 A1=RegOut1 A0=RegOut0 B0=const0 B1=const0 B2=const0 B3=const0 B4=const0 B5=const0 B6=const0 B7=const0 O7=Cout7 O6=Cout6 O5=Cout5 O4=Cout4 O3=Cout3 O2=Cout2 O1=Cout1 O0=Cout0 S=Cend
 
 .search ./mux_8.blif
 .search ./register_8.blif
-.search ./sommatore_8.blif
+.search ./adder_8.blif
 .search ./const_0.blif
 .search ./const_1.blif
 

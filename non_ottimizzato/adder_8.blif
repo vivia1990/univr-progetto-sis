@@ -1,0 +1,16 @@
+.model adder_8
+.inputs Sa7 Sa6 Sa5 Sa4 Sa3 Sa2 Sa1 Sa0 Sb7 Sb6 Sb5 Sb4 Sb3 Sb2 Sb1 Sb0 cin
+.outputs Sout7 Sout6 Sout5 Sout4 Sout3 Sout2 Sout1 Sout0 carout
+
+.subckt adder_1 a=Sa0 b=Sb0 cin=cin sum=Sout0 cout=x0
+.subckt adder_1 a=Sa1 b=Sb1 cin=x0 sum=Sout1 cout=x1
+.subckt adder_1 a=Sa2 b=Sb2 cin=x1 sum=Sout2 cout=x2
+.subckt adder_1 a=Sa3 b=Sb3 cin=x2 sum=Sout3 cout=x3
+.subckt adder_1 a=Sa4 b=Sb4 cin=x3 sum=Sout4 cout=x4
+.subckt adder_1 a=Sa5 b=Sb5 cin=x4 sum=Sout5 cout=x5
+.subckt adder_1 a=Sa6 b=Sb6 cin=x5 sum=Sout6 cout=x6
+.subckt adder_1 a=Sa7 b=Sb7 cin=x6 sum=Sout7 cout=carout
+
+.search ./adder_1.blif
+
+.end

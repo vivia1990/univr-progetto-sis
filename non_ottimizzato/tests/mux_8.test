@@ -1,0 +1,28 @@
+# A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0 S
+# O7 O6 O5 O4 O3 O2 O1 O0
+
+rl mux_8.blif
+
+echo -----------------------------------
+echo sim 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 # select 1
+sim 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 1 # select 1
+echo expected ->
+echo 1 1 1 1 1 1 1 1
+
+echo -----------------------------------
+echo sim 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 # select 0
+sim 1 1 1 1 1 1 1 1 0 0 0 0 0 0 0 0 0 # select 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0
+
+echo -----------------------------------
+echo sim 1 0 0 1 1 1 0 1 1 0 0 1 1 0 0 0 0 # select 0
+sim 1 0 0 1 1 1 0 1 1 0 0 1 1 0 0 0 0 # select 0
+echo expected ->
+echo 1 0 0 1 1 0 0 0
+
+echo -----------------------------------
+echo sim 1 0 0 1 1 1 0 1 1 0 0 1 1 0 0 0 1 # select 1
+sim 1 0 0 1 1 1 0 1 1 0 0 1 1 0 0 0 1 # select 1
+echo expected ->
+echo 1 0 0 1 1 1 0 1

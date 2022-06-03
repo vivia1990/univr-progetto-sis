@@ -1,0 +1,9 @@
+.model register 
+.inputs RegIn Reset
+.outputs RegOut
+.latch RegIn LatchOut re NIL 0
+
+.names Reset LatchOut RegOut
+01 1
+
+.end

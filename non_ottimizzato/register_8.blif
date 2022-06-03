@@ -1,0 +1,17 @@
+.model register_8
+
+.inputs Rin7 Rin6 Rin5 Rin4 Rin3 Rin2 Rin1 Rin0 Reset
+.outputs Rout7 Rout6 Rout5 Rout4 Rout3 Rout2 Rout1 Rout0
+
+.subckt register RegIn=Rin7 RegOut=Rout7 Reset=Reset
+.subckt register RegIn=Rin6 RegOut=Rout6 Reset=Reset
+.subckt register RegIn=Rin5 RegOut=Rout5 Reset=Reset
+.subckt register RegIn=Rin4 RegOut=Rout4 Reset=Reset
+.subckt register RegIn=Rin3 RegOut=Rout3 Reset=Reset
+.subckt register RegIn=Rin2 RegOut=Rout2 Reset=Reset
+.subckt register RegIn=Rin1 RegOut=Rout1 Reset=Reset
+.subckt register RegIn=Rin0 RegOut=Rout0 Reset=Reset
+
+.search ./register.blif
+
+.end

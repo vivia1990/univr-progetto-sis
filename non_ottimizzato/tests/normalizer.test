@@ -1,0 +1,88 @@
+# int3 int2 int1 int0 dec3 dec2 dec1 dec0 dpStart AcidOn BasicOn Reset
+# Oint3 Oint2 Oint1 Oint0 Odec3 Odec2 Odec1 Odec0 dpEnd
+
+rl normalizer.blif
+
+echo sim 1 0 0 1 0 0 0 0 1 1 0 0
+sim 1 0 0 1 0 0 0 0 1 1 0 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 1 0 0
+sim 0 0 0 0 0 0 0 0 0 1 0 0
+echo expected ->
+echo 1 0 0 0 1 0 0 0 0 1 #normalized
+
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 0 0 1
+sim 0 0 0 0 0 0 0 0 0 0 0 1
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0 # reset
+
+echo FINE ----------------------------------- # inizio 6
+echo sim 0 1 1 0 0 0 0 0 1 0 1 0
+sim 0 1 1 0 0 0 0 0 1 0 1 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 0 1 0
+sim 0 0 0 0 0 0 0 0 0 0 1 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 0 1 0
+sim 0 0 0 0 0 0 0 0 0 0 1 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 0 1 0
+sim 0 0 0 0 0 0 0 0 0 0 1 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 0 1 0
+sim 0 0 0 0 0 0 0 0 0 0 1 0
+echo expected ->
+echo 0 1 1 1 0 0 0 0 1 # fine 6
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 0 0 1
+sim 0 0 0 0 0 0 0 0 0 0 0 1
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0 # reset
+
+echo FINE ----------------------------------- # inizio 10
+echo sim 1 0 1 0 0 0 0 0 1 1 0 0
+sim 1 0 1 0 0 0 0 0 1 1 0 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 1 0 0
+sim 0 0 0 0 0 0 0 0 0 1 0 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 1 0 0
+sim 0 0 0 0 0 0 0 0 0 1 0 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 1 0 0
+sim 0 0 0 0 0 0 0 0 0 1 0 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0
+
+echo FINE -----------------------------------
+echo sim 0 0 0 0 0 0 0 0 0 1 0 0
+sim 0 0 0 0 0 0 0 0 0 1 0 0
+echo expected ->
+echo 1 0 0 0 0 0 0 0 1 #fine 10

@@ -1,0 +1,10 @@
+.model xor_gate
+
+.inputs A B
+.outputs XOR
+
+.names A B XOR
+00 0
+11 0
+
+.end

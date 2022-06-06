@@ -1,0 +1,28 @@
+.model comparatorgte_8
+
+.inputs A7 A6 A5 A4 A3 A2 A1 A0 B7 B6 B5 B4 B3 B2 B1 B0
+.outputs AgteB
+
+.subckt xor_gate A=A7 B=B7 XOR=XOR7
+.subckt xor_gate A=A6 B=B6 XOR=XOR6
+.subckt xor_gate A=A5 B=B5 XOR=XOR5
+.subckt xor_gate A=A4 B=B4 XOR=XOR4
+.subckt xor_gate A=A3 B=B3 XOR=XOR3
+.subckt xor_gate A=A2 B=B2 XOR=XOR2
+.subckt xor_gate A=A1 B=B1 XOR=XOR1
+.subckt xor_gate A=A0 B=B0 XOR=XOR0
+
+.names A7 A6 A5 A4 A3 A2 A1 A0 XOR7 XOR6 XOR5 XOR4 XOR3 XOR2 XOR1 XOR0 AgteB
+1-------1------- 1
+-1------01------ 1
+--1-----001----- 1
+---1----0001---- 1
+----1---00001--- 1
+-----1--000001-- 1
+------1-0000001- 1
+-------100000001 1
+--------00000000 1
+
+.search ./xor_gate.blif
+
+.end

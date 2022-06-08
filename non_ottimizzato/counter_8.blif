@@ -7,9 +7,9 @@
 
 .subckt mux_8 A7=const0 A6=const0 A5=const0 A4=const0 A3=const0 A2=const0 A1=const0 A0=const0 B7=xRegOut7 B6=xRegOut6 B5=xRegOut5 B4=xRegOut4 B3=xRegOut3 B2=xRegOut2 B1=xRegOut1 B0=xRegOut0 O7=OutMux7 O6=OutMux6 O5=OutMux5 O4=OutMux4 O3=OutMux3 O2=OutMux2 O1=OutMux1 O0=OutMux0 S=Cstart
 
-.subckt adder_8 Sa0=const1 Sa1=const0 Sa2=const0 Sa3=const0 Sa4=const0 Sa5=const0 Sa6=const0 Sa7=const0 Sb0=OutMux0 Sb1=OutMux1 Sb2=OutMux2 Sb3=OutMux3 Sb4=OutMux4 Sb5=OutMux5 Sb6=OutMux6 Sb7=OutMux7 cin=const0 Sout0=sumOut0 Sout1=sumOut1 Sout2=sumOut2 Sout3=sumOut3 Sout4=sumOut4 Sout5=sumOut5 Sout6=sumOut6 Sout7=sumOut7
+.subckt adder_8 Sa0=const1 Sa1=const0 Sa2=const0 Sa3=const0 Sa4=const0 Sa5=const0 Sa6=const0 Sa7=const0 Sb0=OutMux0 Sb1=OutMux1 Sb2=OutMux2 Sb3=OutMux3 Sb4=OutMux4 Sb5=OutMux5 Sb6=OutMux6 Sb7=OutMux7 cin=const0 Sout0=xSumOut0 Sout1=xSumOut1 Sout2=xSumOut2 Sout3=xSumOut3 Sout4=xSumOut4 Sout5=xSumOut5 Sout6=xSumOut6 Sout7=xSumOut7
 
-.subckt register_8 Rin7=sumOut7 Rin6=sumOut6 Rin5=sumOut5 Rin4=sumOut4 Rin3=sumOut3 Rin2=sumOut2 Rin1=sumOut1 Rin0=sumOut0 Rout0=xRegOut0 Rout1=xRegOut1 Rout2=xRegOut2 Rout3=xRegOut3 Rout4=xRegOut4 Rout5=xRegOut5 Rout6=xRegOut6 Rout7=xRegOut7 Reset=Creset # todo invertire
+.subckt register_8 Rin7=xSumOut7 Rin6=xSumOut6 Rin5=xSumOut5 Rin4=xSumOut4 Rin3=xSumOut3 Rin2=xSumOut2 Rin1=xSumOut1 Rin0=xSumOut0 Rout7=xRegOut7 Rout6=xRegOut6 Rout5=xRegOut5 Rout4=xRegOut4 Rout3=xRegOut3 Rout2=xRegOut2 Rout1=xRegOut1 Rout0=xRegOut0 Reset=Creset
 
 .subckt mux_8 A7=OutMux7 A6=OutMux6 A5=OutMux5 A4=OutMux4 A3=OutMux3 A2=OutMux2 A1=OutMux1 A0=OutMux0 B0=const0 B1=const0 B2=const0 B3=const0 B4=const0 B5=const0 B6=const0 B7=const0 O7=Cout7 O6=Cout6 O5=Cout5 O4=Cout4 O3=Cout3 O2=Cout2 O1=Cout1 O0=Cout0 S=Cend
 

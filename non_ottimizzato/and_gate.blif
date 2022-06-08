@@ -1,0 +1,9 @@
+.model and_gate
+
+.inputs A B
+.outputs AND
+
+.names A B AND
+11 1
+
+.end

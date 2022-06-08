@@ -1,0 +1,252 @@
+# Freset Fstart Fint3 Fint2 Fint1 Fint0 Fdec3 Fdec2 Fdec1 Fdec0
+# Fend Ferror FacidOn FbasicOn FOint3 FOint2 FOint1 FOint0 FOdec3 FOdec2 FOdec1 FOdec0 FCount7 FCount6 FCount5 FCount4 FCount3 FCount2 FCount1 FCount0
+
+rl fsmd.blif
+
+echo TEST-RESET <<
+echo sim 1 0 0 0 0 0 0 0 0 0
+sim 1 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo FINE-RESET >>
+echo 
+
+echo TEST-7 <<
+echo sim 0 1 0 1 1 1 0 0 0 0
+sim 0 1 0 1 1 1 0 0 0 0
+echo expected ->
+echo 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+echo FINE-7 >>
+echo
+
+echo TEST-8 <<
+echo sim 0 1 1 0 0 0 0 0 0 0
+sim 0 1 1 0 0 0 0 0 0 0
+echo expected ->
+echo 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo FINE-8 >>
+echo
+
+echo TEST-7.25 <<
+echo sim 0 1 0 1 1 1 0 1 0 0
+sim 0 1 0 1 1 1 0 1 0 0
+echo expected ->
+echo 1 0 0 0 0 1 1 1 0 1 0 0 0 0 0 0 0 0 0 0
+echo FINE-7.25 >>
+echo
+
+echo TEST-8.0625 <<
+echo sim 0 1 1 0 0 0 0 0 0 1
+sim 0 1 1 0 0 0 0 0 0 1
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 1 0 0 0 0 1 1 1 1 0 0 1 0 0 0 0 0 0 0 1
+echo 
+
+echo FINE-8.0625 >>
+echo
+
+echo TEST-13.9375 <<
+echo sim 0 1 1 1 0 1 1 1 1 1
+sim 0 1 1 1 0 1 1 1 1 1
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 1 0 0 0 0 1 1 1 1 1 1 1 0 0 0 0 1 1 0 0
+echo
+
+echo FINE-13.9375 >>
+echo
+
+echo TEST-2.5 <<
+echo sim 0 1 0 0 1 0 1 0 0 0
+sim 0 1 0 0 1 0 1 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
+
+echo sim 0 0 0 0 0 0 0 0 0 0
+sim 0 0 0 0 0 0 0 0 0 0
+echo expected ->
+echo 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 1 0 0 1 0
+echo
+
+echo FINE-2.5 >>
+echo

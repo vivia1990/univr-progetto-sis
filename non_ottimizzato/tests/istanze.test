@@ -1,0 +1,6 @@
+rl fsmd.blif
+
+source tests/istanza_1.test
+source tests/istanza_3.test
+source tests/istanza_5.test
+source tests/istanza_6.test

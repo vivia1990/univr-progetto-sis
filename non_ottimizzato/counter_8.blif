@@ -5,13 +5,13 @@
 .subckt const_0 C0=const0 
 .subckt const_1 C1=const1
 
-.subckt mux_8 A7=const0 A6=const0 A5=const0 A4=const0 A3=const0 A2=const0 A1=const0 A0=const1 B7=sumout7 B6=sumout6 B5=sumout5 B4=sumout4 B3=sumout3 B2=sumout2 B1=sumout1 B0=sumout0 O7=OutMux7 O6=OutMux6 O5=OutMux5 O4=OutMux4 O3=OutMux3 O2=OutMux2 O1=OutMux1 O0=OutMux0 S=Cstart
+.subckt mux_8 A7=const0 A6=const0 A5=const0 A4=const0 A3=const0 A2=const0 A1=const0 A0=const0 B7=xRegOut7 B6=xRegOut6 B5=xRegOut5 B4=xRegOut4 B3=xRegOut3 B2=xRegOut2 B1=xRegOut1 B0=xRegOut0 O7=OutMux7 O6=OutMux6 O5=OutMux5 O4=OutMux4 O3=OutMux3 O2=OutMux2 O1=OutMux1 O0=OutMux0 S=Cstart
 
-.subckt register_8 Rin7=OutMux7 Rin6=OutMux6 Rin5=OutMux5 Rin4=OutMux4 Rin3=OutMux3 Rin2=OutMux2 Rin1=OutMux1 Rin0=OutMux0 Rout0=RegOut0 Rout1=RegOut1 Rout2=RegOut2 Rout3=RegOut3 Rout4=RegOut4 Rout5=RegOut5 Rout6=RegOut6 Rout7=RegOut7 Reset=Creset # todo invertire
+.subckt adder_8 Sa0=const1 Sa1=const0 Sa2=const0 Sa3=const0 Sa4=const0 Sa5=const0 Sa6=const0 Sa7=const0 Sb0=OutMux0 Sb1=OutMux1 Sb2=OutMux2 Sb3=OutMux3 Sb4=OutMux4 Sb5=OutMux5 Sb6=OutMux6 Sb7=OutMux7 cin=const0 Sout0=sumOut0 Sout1=sumOut1 Sout2=sumOut2 Sout3=sumOut3 Sout4=sumOut4 Sout5=sumOut5 Sout6=sumOut6 Sout7=sumOut7
 
-.subckt adder_8 Sa0=const1 Sa1=const0 Sa2=const0 Sa3=const0 Sa4=const0 Sa5=const0 Sa6=const0 Sa7=const0 Sb0=RegOut0 Sb1=RegOut1 Sb2=RegOut2 Sb3=RegOut3 Sb4=RegOut4 Sb5=RegOut5 Sb6=RegOut6 Sb7=RegOut7 cin=const0 Sout0=sumout0 Sout1=sumout1 Sout2=sumout2 Sout3=sumout3 Sout4=sumout4 Sout5=sumout5 Sout6=sumout6 Sout7=sumout7
+.subckt register_8 Rin7=sumOut7 Rin6=sumOut6 Rin5=sumOut5 Rin4=sumOut4 Rin3=sumOut3 Rin2=sumOut2 Rin1=sumOut1 Rin0=sumOut0 Rout0=xRegOut0 Rout1=xRegOut1 Rout2=xRegOut2 Rout3=xRegOut3 Rout4=xRegOut4 Rout5=xRegOut5 Rout6=xRegOut6 Rout7=xRegOut7 Reset=Creset # todo invertire
 
-.subckt mux_8 A7=RegOut7 A6=RegOut6 A5=RegOut5 A4=RegOut4 A3=RegOut3 A2=RegOut2 A1=RegOut1 A0=RegOut0 B0=const0 B1=const0 B2=const0 B3=const0 B4=const0 B5=const0 B6=const0 B7=const0 O7=Cout7 O6=Cout6 O5=Cout5 O4=Cout4 O3=Cout3 O2=Cout2 O1=Cout1 O0=Cout0 S=Cend
+.subckt mux_8 A7=OutMux7 A6=OutMux6 A5=OutMux5 A4=OutMux4 A3=OutMux3 A2=OutMux2 A1=OutMux1 A0=OutMux0 B0=const0 B1=const0 B2=const0 B3=const0 B4=const0 B5=const0 B6=const0 B7=const0 O7=Cout7 O6=Cout6 O5=Cout5 O4=Cout4 O3=Cout3 O2=Cout2 O1=Cout1 O0=Cout0 S=Cend
 
 .search ./mux_8.blif
 .search ./register_8.blif

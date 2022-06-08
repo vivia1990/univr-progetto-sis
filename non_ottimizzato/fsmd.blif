@@ -1,29 +1,18 @@
 .model fsmd
 
 .inputs Freset Fstart Fint3 Fint2 Fint1 Fint0 Fdec3 Fdec2 Fdec1 Fdec0
-.outputs Fend Ferror FacidOn FbasicOn FOint3 FOint2 FOint1 FOint0 FOdec3 FOdec2 FOdec1 FOdec0 FCount7 FCount6 FCount5 FCount4 FCount3 FCount2 FCount1 FCount0 
-
-.subckt const_0 C0=const0 
-.subckt const_1 C1=const1
+.outputs Fend Ferror FacidOn FbasicOn FOint3 FOint2 FOint1 FOint0 FOdec3 FOdec2 FOdec1 FOdec0 FCount7 FCount6 FCount5 FCount4 FCount3 FCount2 FCount1 FCount0
 
 .subckt counter_8 Cstart=CdpStart Cend=XdpEnd Creset=Freset Cout7=FCount7 Cout6=FCount6 Cout5=FCount5 Cout4=FCount4 Cout3=FCount3 Cout2=FCount2 Cout1=FCount1 Cout0=FCount0
 
-.subckt normalizer int3=Fint3 int2=Fint2 int1=Fint1 int0=Fint0 dec3=Fdec3 dec2=Fdec2 dec1=Fdec1 dec0=Fdec0 Reset=Freset dpStart=CdpStart AcidOn=FacidOn BasicOn=FbasicOn Oint3=xFOint3 Oint2=xFOint2 Oint1=xFOint1 Oint0=xFOint0 Odec3=xFOdec3 Odec2=xFOdec2 Odec1=xFOdec1 Odec0=xFOdec0
+.subckt normalizer int3=Fint3 int2=Fint2 int1=Fint1 int0=Fint0 dec3=Fdec3 dec2=Fdec2 dec1=Fdec1 dec0=Fdec0 Reset=Freset dpStart=CdpStart AcidOn=FacidOn BasicOn=FbasicOn Oint3=FOint3 Oint2=FOint2 Oint1=FOint1 Oint0=FOint0 Odec3=FOdec3 Odec2=FOdec2 Odec1=FOdec1 Odec0=FOdec0 dpEnd=XdpEnd
 
-.subckt comparatorgte_8 A7=xFOint3 A6=xFOint2 A5=xFOint1 A4=xFOint0 A3=xFOdec3 A2=xFOdec2 A1=xFOdec1 A0=xFOdec0 B7=const0 B6=const1 B5=const1 B4=const1 B3=const0 B2=const0 B1=const0 B0=const0 AgteB=aGte7
-
-.subckt comparatorlte_8 A7=xFOint3 A6=xFOint2 A5=xFOint1 A4=xFOint0 A3=xFOdec3 A2=xFOdec2 A1=xFOdec1 A0=xFOdec0 B7=const1 B6=const0 B5=const0 B4=const0 B3=const0 B2=const0 B1=const0 B0=const0 AlteB=aLte8
-
-.subckt and_gate A=aGte7 B=aLte8 AND=XdpEnd
-
-.subckt mux_8 A7=xFOint3 A6=xFOint2 A5=xFOint1 A4=xFOint0 A3=xFOdec3 A2=xFOdec2 A1=xFOdec1 A0=xFOdec0 B7=const0 B6=const0 B5=const0 B4=const0 B3=const0 B2=const0 B1=const0 B0=const0 O7=FOint3 O6=FOint2 O5=FOint1 O4=FOint0 O3=FOdec3 O2=FOdec2 O1=FOdec1 O0=FOdec0 S=XdpEnd
-
-.subckt controller reset=Freset start=Fstart int3=Fint3 int2=Fint2 int1=Fint1 int0=Fint0 dec3=Fdec3 dec2=Fdec2 dec1=Fdec1 dec0=Fdec0 dpEnd=XdpEnd end=Fend error=Ferror acidOn=FacidOn basicOn=FbasicOn dpReset=xDpReset dpStart=CdpStart
+.subckt controller reset=Freset start=Fstart int3=Fint3 int2=Fint2 int1=Fint1 int0=Fint0 dec3=Fdec3 dec2=Fdec2 dec1=Fdec1 dec0=Fdec0 dpEnd=XdpEnd end=Fend error=Ferror acidOn=FacidOn basicOn=FbasicOn dpStart=CdpStart
 
 .search ./mux_8.blif
 .search ./counter_8.blif
 .search ./normalizer.blif
-.search ./controller.blif
+.search ./controller_assigned.blif
 .search ./const_0.blif
 .search ./const_1.blif
 

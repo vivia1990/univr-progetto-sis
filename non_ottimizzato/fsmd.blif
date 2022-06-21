@@ -12,7 +12,7 @@
 .search ./mux_8.blif
 .search ./counter_8.blif
 .search ./normalizer.blif
-.search ./controller_assigned.blif
+.search ./controller.blif
 .search ./const_0.blif
 .search ./const_1.blif
 

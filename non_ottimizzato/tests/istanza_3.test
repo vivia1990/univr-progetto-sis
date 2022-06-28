@@ -6,26 +6,32 @@ echo TEST-ISTANZA-3 <<
 echo sim 1 0 0 0 0 0 0 0 0 0
 sim 1 0 0 0 0 0 0 0 0 0
 echo expected -> 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
 
 echo sim 0 1 1 0 1 0 0 0 0 0
 sim 0 1 1 0 1 0 0 0 0 0
 echo expected -> 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
 
 echo sim 0 0 0 0 0 0 0 0 0 0
 sim 0 0 0 0 0 0 0 0 0 0
 echo expected -> 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
 
 echo sim 0 0 0 0 0 0 0 0 0 0
 sim 0 0 0 0 0 0 0 0 0 0
 echo expected -> 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
 
 echo sim 0 0 0 0 0 0 0 0 0 0
 sim 0 0 0 0 0 0 0 0 0 0
 echo expected -> 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+echo
 
 echo sim 0 0 0 0 0 0 0 0 0 0
 sim 0 0 0 0 0 0 0 0 0 0
 echo expected -> 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0
+echo
 
 echo FINE-ISTANZA-3 >>
 echo 

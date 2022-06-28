@@ -1,0 +1,17 @@
+echo
+echo counter_8
+rl counter_8.blif
+
+psf
+
+sweep
+eliminate -1
+fs
+eliminate 5
+eliminate 5
+fs
+fx
+
+psf
+
+wl counter_8.blif

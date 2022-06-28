@@ -1,0 +1,16 @@
+echo
+echo normalizer
+
+rl normalizer.blif
+
+psf
+
+sweep
+eliminate -1
+fs
+eliminate 20
+fx
+
+psf
+
+wl normalizer.blif

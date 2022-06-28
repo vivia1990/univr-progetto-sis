@@ -1,0 +1,14 @@
+echo
+echo comparatorgte_8
+rl comparatorgte_8.blif
+
+psf
+
+fx
+fs
+eliminate -1
+sweep
+
+psf
+
+wl comparatorgte_8.blif

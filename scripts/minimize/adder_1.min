@@ -1,0 +1,12 @@
+echo
+echo adder_1
+
+rl adder_1.blif
+
+psf
+
+fs
+
+psf
+
+wl adder_1.blif

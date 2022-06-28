@@ -1,0 +1,11 @@
+echo
+echo mux2_8
+rl mux2_8.blif
+
+psf
+
+source script.rugged
+
+psf
+
+wl mux2_8.blif

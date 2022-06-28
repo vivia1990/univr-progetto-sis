@@ -1,0 +1,12 @@
+echo
+echo controller
+rl controller_base.blif
+sa jedi
+
+psf
+
+source script.rugged
+
+psf
+
+wl controller.blif

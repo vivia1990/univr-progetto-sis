@@ -1,0 +1,15 @@
+echo
+echo fsmd
+
+rl fsmd.blif
+
+psf
+
+sweep
+eliminate -1
+fs 
+fx
+
+psf
+
+wl fsmd.blif

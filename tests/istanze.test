@@ -1,0 +1,6 @@
+rl fsmd.blif
+
+source ./non_ottimizzato/tests/istanza_1.test
+source ./non_ottimizzato/tests/istanza_3.test
+source ./non_ottimizzato/tests/istanza_5.test
+source ./non_ottimizzato/tests/istanza_6.test

@@ -19,8 +19,10 @@ language: it-IT
 ## Segnali fsm e datapath:
 
  - **DPSTART [1 bit]**: Questo segnale serve al Controllore per comunicare al datapath di iniziare a lavorare e utilizzare il pH dato dall'input e non quello contenuto nel suo registro. Questo segnale viene alzato solo al cambiamento di stato, al ciclo successivo viene abbassato per permettere al datapath di utilizzare il dato salvato nel registro
+  
+- **AON [1 bit]**: Questo segnale serve al Controllore per segnalare al macchinario di aprire la valvola che eroga la soluzione acida.
 
-- **AONBON [2 bit]**: Questo segnale serve al Controllore per segnalare quale valvola aprire, se acida o basica.
+- **BON [1 bit]**: Questo segnale serve al Controllore per segnalare al macchinario di aprire la valvola che eroga la soluzioen basica.
 
 - **DPEND [1 bit]**: Questo segnale e' utilizzato dal datapath per segnalare la fine dell'esecuzione e permettergli di cambiare stato.
 
@@ -36,4 +38,6 @@ language: it-IT
 
 - **PH_FINALE [8 bit]**: Questo output avra' segnale con tutti i bit a 0 finche il macchinario non termina le operazioni, una volta terminate fornisce il pH della soluzione neutra ottenuta. Il pH sara' codificato in fixed-point con 4 bit per l'intero e 4 per la parte decimale come nell'input
 
-- **NCLCK [8 bit]**: Questo output ritorna il numero di cicli di clock che sono stati necessari per portare la soluzione iniziale a neutra
+- **NCLK [8 bit]**: Questo output ritorna il numero di cicli di clock che sono stati necessari per portare la soluzione iniziale a neutra
+
+!["Esempio di output"](resources/img/output.png)

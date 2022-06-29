@@ -2,6 +2,7 @@
 toc: true
 toc-title: "Tabella dei contenuti"
 language: "it-IT"
+pandoc-latex-unlisted: [unlisted, [class1, class2]]
 include-before:
 - '`\newpage{}`{=latex}'
 ---

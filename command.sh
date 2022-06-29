@@ -103,12 +103,19 @@ EOF
     echo -e "${CYAN}\nFine test!${NC}"
 }
 
+files=("elaborato.md" "schema.md" "fsm.md" "datapath.md" )
+build_relazione() {
+    cd relazione
+    pandoc header.yaml -H preamble.tex --pdf-engine=xelatex  "${files[@]}" -o ../relazione.pdf
+}
+
 declare -A options
 options[copy]=copy_files
 options[delete]=del_files
 options[minimize]=minimization
 options[deploy]=deploy_project
 options[test]=test_project
+options[relazione]=build_relazione
 
 name_command=$1
 flag=0

@@ -91,5 +91,3 @@ lits(sop)= 231
 ```
 
 Un miglioramento di circa il `76%` per quanto riguardo l'**area**, e del `49%` circa per quanto riguarda il **ritardo** .
-
-

@@ -13,12 +13,14 @@ RUN dpkg --add-architecture i386
 RUN apt -y update
 RUN apt -y install build-essential gcc-multilib git nano vim neofetch htop wget librsvg2-bin
 RUN apt-get -y install apt-utils sudo tzdata curl
-RUN apt-get -y install texlive texlive-science texlive-latex-extra python3 python3-pip
+RUN apt-get -y install texlive texlive-science texlive-xetex texlive-lang-italian texlive-latex-extra python3 python3-pip
 
 RUN echo "root:$ROOT_PW" | chpasswd
 
 RUN addgroup --gid $GROUP_ID www
 RUN adduser --disabled-password --gecos '' --uid $USER_ID --gid $GROUP_ID www
+
+RUN echo "www:www" | chpasswd
 
 WORKDIR /tmp
 RUN wget https://github.com/jgm/pandoc/releases/download/${pandoc_version}/pandoc-${pandoc_version}-1-amd64.deb && dpkg -i pandoc-${pandoc_version}-1-amd64.deb

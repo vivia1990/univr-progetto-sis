@@ -2,7 +2,7 @@
 toc: true
 toc-title: "Tabella dei contenuti"
 language: "it-IT"
-pandoc-latex-unlisted: [unlisted, [class1, class2]]
+geometry: "top=2cm,bottom=2cm"
 include-before:
 - '`\newpage{}`{=latex}'
 ---

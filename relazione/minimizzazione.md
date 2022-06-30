@@ -6,7 +6,7 @@ language: it-IT
 
 # Minimizzazione logica
 La minimizzazione logica è stata effettuata con gli strumenti di sintesi di sis. Tutte le operazioni di minimizzazione sono disponibili nella cartella `scripts/minimize` e vengono lanciate **in ordine** dal file `minimize.s`. \newline
-La minimizzazione andava fatta per area, ossia diminuendo il numero di letterali. Con alcuni componenti la `script.rugged` dava una soluzione buona, con altri è stato necessario trovare una sequenza "ottimale" di comandi per l'ottimizzazione. In alcuni casi abbiamo ottenuto anche un notevole miglioramento del **ritardo**, numero di nodi. \newline
+La minimizzazione andava fatta per **area**, ossia diminuendo il numero di letterali. Con alcuni componenti la `script.rugged` dava una soluzione buona, con altri è stato necessario trovare una sequenza "ottimale" di comandi per l'ottimizzazione. In alcuni casi abbiamo ottenuto anche un notevole miglioramento del **ritardo**, ossia il numero di nodi. \newline
 Di seguito le statistiche per la **fsm** e il **datapath**.
 
 ## Fsm:
@@ -73,7 +73,7 @@ sis> psf
 counter_8     	pi= 3	po= 8	nodes= 22	latches= 8
 lits(sop)=  70
 ```
-Il miglioramento qui è statp buono sia per i letterali che per i nodi.
+Il miglioramento qui è stato buono sia per i letterali che per i nodi.
 
 \newpage
 

@@ -33,8 +33,6 @@ Dopo l'ottimizzazione i **letterali** sono `46`, circa l'`85%` in meno, mentre i
 ## Datapath:
 Essendo il datapath separato in 2 circuiti, li analizzo a parte.
 
-\newpage
-
 ## Normalizzatore: {.unlisted .unnumbered}
 Statistiche ottenute dal circuito **non minimizzato**.
 ```js
@@ -74,8 +72,6 @@ counter_8     	pi= 3	po= 8	nodes= 22	latches= 8
 lits(sop)=  70
 ```
 Il miglioramento qui è stato buono sia per i letterali che per i nodi.
-
-\newpage
 
 ## FSMD:
 Le statistiche **complessive** del circuito non minimizzato sono:

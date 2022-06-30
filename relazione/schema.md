@@ -40,8 +40,6 @@ language: it-IT
 
 - **NCLK [8 bit]**: Questo output ritorna il numero di cicli di clock che sono stati necessari per portare la soluzione iniziale a neutra.
 
-\newpage
-
 ## Funzionamento
 Una volta avviato il circuito dall'entry point `fsmd.blif`, per iniziare l'elaborazione è necessario fornire in ingresso il bit di **RESET** a `0`, **START** alzato a `1` seguito dal ph di 8bit.
 Ricevuto l'input, l'fsm valuterà se il ph è di tipo **acido** o **basico**, inviando al datapath i segnali di **ACIDO ON**, **BASICO ON** e **DPSTART**.

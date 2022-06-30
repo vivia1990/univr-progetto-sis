@@ -1,10 +1,6 @@
 ---
-title: Analisi PH
-author: Michele Viviani, Pietro Decarli
 language: it-IT
 ---
-
-\newpage
 
 # Datapath
 Il **datapath** è responsabile dell'esecuzione di tutte le operazioni necessarie alla normalizzazione del ph ricevuto in input e del conteggio. Abbiamo deciso di scomporlo in **2 macrocircuiti**, uno relativo alla normalizzazione `normalizer.blif` e uno relativo al contatore ad 8bit `counter_8.blif`.
@@ -20,7 +16,6 @@ Il **normalizzatore** si occupa di normalizzare il ph, ossia portarlo da un valo
 - **MUX 1**: multiplexer con selezione a 1 bit **DPSTART** relativo al file `mux_8.blif`, **ingressi**:
   - **0**: output di **REG 1**, opera sul valore presente nel registro **REG 1**
   - **1**: **PHIN**, inizia dal nuovo valore
-\newpage
 
 - **MUX 2**: multiplexer con selezione a 2bit (**ACIDO_ON**, **BASICO_ON**) relativo al file `mux2_8.blif`, **ingressi**:
   - **00**: output costante `00`
@@ -68,8 +63,6 @@ l'ingresso `00` selezionato del **MUX 2** è la costante `00`, elemento neutro d
 Una volta selezionato il secondo addendo, il risultato viene messo nel **REG 1**. Al ciclo di clock successivo sarà presente all'ingresso del **MUX 1**, e verrà quindi selezionato, se il bit di selezione è `0`, in modo da creare il ciclo per le successive somme. \newline
 Ogni valore in uscita dal **MUX 1** viene testato dai 2 comparatori, che produrrano il segnale **DPEND**. Quando questo risulterà `1` il **MUX 3** potrà portare in uscita il valore del ph ottenuto. \newline
 Per normalizzare un nuovo ph basterà passare nuovamente **PHIN** e il segnale **DPSTART** a `1`, senza necessariamente passare dalla fase di reset.
-
-\newpage
 
 ## Contatore 8bit
 Il **contatore a 8bit**, `counter_8.blif`, è un semplice contatore in grado di contare fino a $2^{8} - 1 = 255$. L'output viene visualizzato solo quando il segnale di selezione di **MUX_2**, rappresentato da **ENDCOUNT**, è a `1`.

@@ -7,7 +7,7 @@ language: it-IT
 \newpage
 
 # Presentazione
-Viene richiesto di progettare un circuito sequenziale che controlla un macchinario chimico il cui scopo è di portare il pH di una certa soluzione ad essere neutro. Per modificare il ph il macchinario ha a disposizione
+Viene richiesto di progettare un circuito sequenziale che controlli un macchinario chimico il cui scopo è di portare il pH di una certa soluzione ad essere neutro. Per modificare il ph il macchinario ha a disposizione
 due valvole che controllano l'erogazione di una soluzione basica e una acida. Quando verrà data in ingresso una soluzione **acida** il macchinario aprirà la valvola che gestisce la soluzione basica, finchè la soluzione finale non sarà neutra. Quando verrà data in ingresso una soluzione **basica** il macchinario aprirà, invece, la valvola che gestisce la soluzione acida. Le valvole di erogazione hanno efficacia diversa, la valvola della soluzione basica permette di **alzare** il pH di `0.25` per ogni ciclo di clock, mentre la valvola della soluzione acida permette di **abbassarne** il livello di `0.5` per ciclo di clock.
 Il macchinario tiene anche conto del numero di cicli necessari alla **normalizzazione**.
 

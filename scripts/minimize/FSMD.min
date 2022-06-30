@@ -1,7 +1,7 @@
 echo
-echo fsmd
+echo FSMD
 
-rl fsmd.blif
+rl FSMD.blif
 
 psf
 
@@ -12,4 +12,4 @@ fx
 
 psf
 
-wl fsmd.blif
+wl FSMD.blif

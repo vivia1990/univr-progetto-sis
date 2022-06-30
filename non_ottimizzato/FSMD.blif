@@ -1,4 +1,4 @@
-.model fsmd
+.model FSMD
 
 .inputs Freset Fstart Fint3 Fint2 Fint1 Fint0 Fdec3 Fdec2 Fdec1 Fdec0
 .outputs Fend Ferror FacidOn FbasicOn FOint3 FOint2 FOint1 FOint0 FOdec3 FOdec2 FOdec1 FOdec0 FCount7 FCount6 FCount5 FCount4 FCount3 FCount2 FCount1 FCount0

@@ -5,7 +5,7 @@ language: it-IT
 \newpage
 
 # Mapping tecnologico
-Il **mapping tencologico** è stato eseguito con la libreria fornita da sis `synch.genlib`, mediante il comando `map -m 0` per ridurre al minimo l'**area**, sul file complessivo del circuito `fsmd.blif`. I risultati sono divisi tra il circuito **ottimizzato** e quello **non ottimizzato**.
+Il **mapping tencologico** è stato eseguito con la libreria fornita da sis `synch.genlib`, mediante il comando `map -m 0` per ridurre al minimo l'**area**, sul file complessivo del circuito `FSMD.blif`. I risultati sono divisi tra il circuito **ottimizzato** e quello **non ottimizzato**.
 
 Circuito **pre ottimizzazione**:
 ```go

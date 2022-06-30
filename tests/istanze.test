@@ -1,4 +1,4 @@
-rl fsmd.blif
+rl FSMD.blif
 
 source ./non_ottimizzato/tests/istanza_1.test
 source ./non_ottimizzato/tests/istanza_3.test

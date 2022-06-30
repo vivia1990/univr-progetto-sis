@@ -1,6 +1,6 @@
 # esegue le ottimizzazioni in ordine
 
-rl fsmd.blif
+rl FSMD.blif
 psf
 
 source ./scripts/minimize/adder_1.min
@@ -10,8 +10,8 @@ source ./scripts/minimize/mux2_8.min
 source ./scripts/minimize/controller.min
 source ./scripts/minimize/counter_8.min
 source ./scripts/minimize/normalizer.min
-source ./scripts/minimize/fsmd.min
+source ./scripts/minimize/FSMD.min
 
-rl fsmd.blif
+rl FSMD.blif
 psf
 

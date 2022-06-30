@@ -76,17 +76,17 @@ Il miglioramento qui è stato buono sia per i letterali che per i nodi.
 ## FSMD
 Le statistiche **complessive** del circuito non minimizzato sono:
 ```js
-sis> rl fsmd.blif
+sis> rl FSMD.blif
 sis> psf
-fsmd            pi=10	po=20	nodes=134	latches=18
+FSMD            pi=10	po=20	nodes=134	latches=18
 lits(sop)= 974
 ```
 
-Dopo la minimizzazione di ogni componente e anche di `fsmd.blif`, presente nel file `scripts/minimize/fsmd.min`, abbiamo:
+Dopo la minimizzazione di ogni componente e anche di `FSMD.blif`, presente nel file `scripts/minimize/FSMD.min`, abbiamo:
 ```js
-sis> rl fsmd.blif
+sis> rl FSMD.blif
 sis> psf
-fsmd          	pi=10	po=20	nodes= 68	latches=18
+FSMD          	pi=10	po=20	nodes= 68	latches=18
 lits(sop)= 231
 ```
 

@@ -41,7 +41,7 @@ language: it-IT
 - **DPEND[1]**: segnale di output dal datapath (`normalizer.blif`) che viene ricevuto in ingresso dalla fsm, decreta la fine della normalizzazione.
 
 ## Funzionamento
-Una volta avviato il circuito dall'entry point `fsmd.blif`, per iniziare l'elaborazione è necessario fornire in ingresso il bit di **RESET** a `0`, **START** alzato a `1` seguito dal pH di 8bit.
+Una volta avviato il circuito dall'entry point `FSMD.blif`, per iniziare l'elaborazione è necessario fornire in ingresso il bit di **RESET** a `0`, **START** alzato a `1` seguito dal pH di 8bit.
 Ricevuto l'input, l'fsm valuterà se il pH è di tipo **acido** o **basico**, inviando al datapath i segnali di **ACIDO ON**, **BASICO ON** e **DPSTART**. Esempio:
 ```bash
 sim 0 1 1 0 0 1 0 0 0 0 # start e ph = 9

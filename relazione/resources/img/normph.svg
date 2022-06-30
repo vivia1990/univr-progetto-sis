@@ -162,12 +162,12 @@
    <polyline fill="none" points="525,231 530,231 540,231 540,251 550,251 564,251" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="3.0"></polyline>
    <polygon fill="none" points="515,240 525,231 515,222 491,222 491,240" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2.0"></polygon>
    <text fill="rgb(0, 0, 0)" font-family="Monospaced" font-size="12" x="496.0" y="237.0">x1</text>
-   <text fill="rgb(0, 0, 255)" font-family="Monospaced" font-size="16" font-weight="bold" x="388" y="238.0">ACID_ON</text>
+   <text fill="rgb(0, 0, 255)" font-family="Monospaced" font-size="16" font-weight="bold" x="388" y="238.0">ACIDO_ON</text>
    <ellipse cx="530.0" cy="231.0" fill="rgb(0, 0, 0)" rx="2.0" ry="2.0" stroke="none" stroke-width="2.0"></ellipse>
    <polyline fill="none" points="525,261 530,261 550,261 564,261" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="3.0"></polyline>
    <polygon fill="none" points="515,270 525,261 515,252 491,252 491,270" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2.0"></polygon>
    <text fill="rgb(0, 0, 0)" font-family="Monospaced" font-size="12" x="496.0" y="267.0">x1</text>
-   <text fill="rgb(0, 0, 255)" font-family="Monospaced" font-size="16" font-weight="bold" x="378" y="268.0">BASIC_ON</text>
+   <text fill="rgb(0, 0, 255)" font-family="Monospaced" font-size="16" font-weight="bold" x="378" y="268.0">BASICO_ON</text>
    <ellipse cx="530.0" cy="261.0" fill="rgb(0, 0, 0)" rx="2.0" ry="2.0" stroke="none" stroke-width="2.0"></ellipse>
    <polyline fill="none" points="495,451 500,451 540,451 540,391" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="3.0"></polyline>
    <polygon fill="none" points="485,460 495,451 485,442 461,442 461,460" stroke="rgb(0, 0, 0)" stroke-linecap="square" stroke-width="2.0"></polygon>

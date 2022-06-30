@@ -5,11 +5,11 @@ language: it-IT
 \newpage
 
 # Minimizzazione logica
-La minimizzazione logica è stata effettuata con gli strumenti di sintesi di sis. Tutte le operazioni di minimizzazione sono disponibili nella cartella `scripts/minimize` e vengono lanciate **in ordine** dal file `minimize.s`. \newline
+La minimizzazione logica è stata effettuata con gli strumenti di sintesi di sis. Tutte le operazioni di minimizzazione sono disponibili nella cartella `scripts/minimize` e vengono lanciate **in ordine** dal file `minimize.s`. L'ordine è fondamentale in quanto alcuni componenti dipendono da altri, ed è quindi necessario minimizzare prima le dipendenze.\newline
 La minimizzazione andava fatta per **area**, ossia diminuendo il numero di letterali. Con alcuni componenti la `script.rugged` dava una soluzione buona, con altri è stato necessario trovare una sequenza "ottimale" di comandi per l'ottimizzazione. In alcuni casi abbiamo ottenuto anche un notevole miglioramento del **ritardo**, ossia il numero di nodi. \newline
 Di seguito le statistiche per la **fsm** e il **datapath**.
 
-## Fsm:
+## Fsm
 Statistiche ottenute dopo aver lanciato l'assegnazione degli stati, `state_assign jedi`, **non minimizzate**.
 ```js
 sis> rl controller.blif
@@ -30,10 +30,10 @@ lits(sop)=  46	#states(STG)=   3
 
 Dopo l'ottimizzazione i **letterali** sono `46`, circa l'`85%` in meno, mentre i nodi della rete sono quasi raddoppiati a `12`. Ci interessa l'ottimizzazione per area quindi il risultato è buono.
 
-## Datapath:
+## Datapath
 Essendo il datapath separato in 2 circuiti, li analizzo a parte.
 
-## Normalizzatore: {.unlisted .unnumbered}
+## Normalizzatore {.unlisted .unnumbered}
 Statistiche ottenute dal circuito **non minimizzato**.
 ```js
 sis> rl normalizer.blif
@@ -53,7 +53,7 @@ lits(sop)= 128
 ```
 Il miglioramento qui è stato notevole sia per i letterali che per i nodi.
 
-## Contatore 8bit: {.unlisted .unnumbered}
+## Contatore 8bit {.unlisted .unnumbered}
 Statistiche ottenute dal circuito **non minimizzato**.
 ```js
 sis> rl counter_8.blif
@@ -73,7 +73,7 @@ lits(sop)=  70
 ```
 Il miglioramento qui è stato buono sia per i letterali che per i nodi.
 
-## FSMD:
+## FSMD
 Le statistiche **complessive** del circuito non minimizzato sono:
 ```js
 sis> rl fsmd.blif

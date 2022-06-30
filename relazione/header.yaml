@@ -1,0 +1,8 @@
+---
+toc: true
+toc-title: "Tabella dei contenuti"
+language: "it-IT"
+geometry: "top=2cm,bottom=2cm"
+include-before:
+- '`\newpage{}`{=latex}'
+---

@@ -10,41 +10,41 @@ language: it-IT
 
 ## Input: {.unlisted .unnumbered}
 
-- **RST [1 bit]**: questo segnale servira' a resettare la macchina, quando viene alzato questo ingresso la fsm passa da qualsiasi stato fosse precedentemente a quello di RESET e porta tutti i bit dell'output a 0.
+- **RST [1 bit]**: questo segnale, alzato a `1`, servirà a resettare il circuito, portando tutti gli output a `0`.
 
-- **START [1 bit]**: questo segnale da inizio alla elaborazione e una volta messo a 1 la macchina leggera' il pH dato in input.
+- **START [1 bit]**: questo segnale, alzato a `1`, da inizio alla elaborazione del pH in input.
 
-- **PH [8 bit]**: il segnale del pH iniziale e' formato da 8 bit codificato in fixed-point in cui 4 bit sono asseegnati alla parte intera e 4 bit alla parte decimale
-
-## Segnali fsm e datapath: {.unlisted .unnumbered}
-
- - **DPSTART [1 bit]**: Questo segnale serve al Controllore per comunicare al datapath di iniziare a lavorare e utilizzare il pH dato dall'input e non quello contenuto nel suo registro. Questo segnale viene alzato solo al cambiamento di stato, al ciclo successivo viene abbassato per permettere al datapath di utilizzare il dato salvato nel registro
-  
-- **AON [1 bit]**: Questo segnale serve al Controllore per segnalare al datapath di aprire la valvola che eroga la soluzione acida.
-
-- **BON [1 bit]**: Questo segnale serve al Controllore per segnalare al datapath di aprire la valvola che eroga la soluzione basica.
-
-- **DPEND [1 bit]**: Questo segnale e' utilizzato dal datapath per segnalare la fine dell'esecuzione e permettere alla fsm di cambiare stato.
+- **PH [8 bit]**: il pH iniziale.
 
 ## Output: {.unlisted .unnumbered}
 
-- **FINE_OPERAZIONE [1 bit]**: Questo output viene attivato quando il datapath ha finito di lavorare e la soluzione, quindi, e' stata portata ad avere un pH neutro.
+- **FINE_OPERAZIONE [1 bit]**: Questo output viene alzato a `1` quando la soluzione è stata portata ad avere un pH neutro.
 
-- **ERRORE_SENSORE [1 bit]**: Il segnale di errore sensore viene utilizzato quando viene dato in input un valore di  pH non valido.
+- **ERRORE_SENSORE [1 bit]**: Il segnale di errore sensore viene alzato a `1` quando il pH in input  ha un valore valido.
 
-- **VALVOLA_ACIDO [1 bit]**: Questo output serve a segnalare che la valvola della soluzione  acida è stata aperta dal macchinario per portare la soluzione a un pH neutro.
+- **VALVOLA_ACIDO [1 bit]**: segnala, se uguale a `1`, che la valvola della soluzione acida è stata aperta dal macchinario per portare la soluzione a un pH neutro.
 
-- **VALVOLA_BASICO [1 bit]**: Questo output  segnala l'utilizzo di una soluzione basica per portare ad un pH neutro.
+- **VALVOLA_BASICO [1 bit]**: segnala, se uguale a `1`, che la valvola della soluzione basica è stata aperta dal macchinario per portare la soluzione a un pH neutro.
 
-- **PH_FINALE [8 bit]**: Questo output avra' segnale con tutti i bit a 0 finche il macchinario non termina le operazioni, una volta terminate fornisce il pH della soluzione neutra ottenuta. Il pH sara' codificato in fixed-point con 4 bit per l'intero e 4 per la parte decimale come nell'input.
+- **PH_FINALE [8 bit]**: Questo output avrà segnale con tutti i bit a 0 fino a che il macchinario non termina le operazioni, una volta terminate fornisce il pH della soluzione neutra ottenuta.
 
 - **NCLK [8 bit]**: Questo output ritorna il numero di cicli di clock che sono stati necessari per portare la soluzione iniziale a neutra.
 
+## Segnali fsm e datapath: {.unlisted .unnumbered}
+
+ - **DPSTART [1 bit]**: segnale di output della fsm che viene ricevuto dal datapath, se alzato a `1` indica l'inizio dell'elaborazione.
+  
+- **ACIDO ON [1 bit]**: segnale di output della fsm che viene ricevuto dal datapath, indica se la valvola acida è aperta se valorizzato a  `1`
+
+- **BASICO ON [1 bit]**: segnale di output della fsm che viene ricevuto dal datapath, indica se la valvola basica è aperta se valorizzato a  `1`
+
+- **DPEND [1 bit]**: segnale di output dal datapath (`normalizer.blif`) che viene ricevuto in ingresso dalla fsm, decreta la fine della normalizzazione.
+
 ## Funzionamento
-Una volta avviato il circuito dall'entry point `fsmd.blif`, per iniziare l'elaborazione è necessario fornire in ingresso il bit di **RESET** a `0`, **START** alzato a `1` seguito dal ph di 8bit.
-Ricevuto l'input, l'fsm valuterà se il ph è di tipo **acido** o **basico**, inviando al datapath i segnali di **ACIDO ON**, **BASICO ON** e **DPSTART**.
-Il datapath inizierà quindi l'elaborazione del ph, producendo in output tutti `0`, fino a che la soluzione non sarà **normalizzata**. Una volta finito, il datapath invierà il segnale **DPEND** alla fsm che cambierà stato producendo in output il segnale di **FINE OPERAZIONE** e abbassando **ACIDO ON**/**BASICO ON**.
-Il segnale **DPEND** viene usato anche dal datapath per produrre in output il valore ottenuto del ph ed il numero di cicli di clock necessari. \newline
-Di seguito un esempio di output
+Una volta avviato il circuito dall'entry point `fsmd.blif`, per iniziare l'elaborazione è necessario fornire in ingresso il bit di **RESET** a `0`, **START** alzato a `1` seguito dal pH di 8bit.
+Ricevuto l'input, l'fsm valuterà se il pH è di tipo **acido** o **basico**, inviando al datapath i segnali di **ACIDO ON**, **BASICO ON** e **DPSTART**.
+Il datapath inizierà quindi l'elaborazione del pH, producendo in output tutti `0`, fino a che la soluzione non sarà **normalizzata**. Una volta finito, il datapath invierà il segnale **DPEND** alla fsm che cambierà stato producendo in output il segnale di **FINE OPERAZIONE** e abbassando **ACIDO ON**/**BASICO ON**.
+Il segnale **DPEND** viene usato anche dal datapath per produrre in output il valore ottenuto del pH ed il numero di cicli di clock necessari. \newline
+Di seguito un esempio di output normalizzato
 
 !["Esempio di output"](resources/img/output.png)

@@ -33,3 +33,8 @@ Number of Critical PO	= 38
 ```
 
 L'area è diminuita circa del `27%` mentre il cammino critico dell'`8%`. Siamo riusciti a ridurre sia l'area che il ritardo durante la fase di ottimizzazione. Il che ci porta ad aver pienamente raggiunto il nostro obiettivo.
+
+# Scelte progettuali
+## Datapath {.unlisted .unnumbered}
+Il datapath è stato diviso in due macrocircuiti (`normalizer.blif` e `counter_8.blif`)) in modo da ridurne la complessità, e avere nel caso componenti modulari riutilizzabili. \newline
+In `normalizer.blif` abbiamo deciso di usare direttamente i segnali di output della fsm **BASICO ON** e **ACIDO ON**, per selezionare la costante da sommare. Dato che, in un funzionamento corretto, entrambi non possono essere mai valorizzati a `1`, il caso `11` non si può mai verificare. In caso di `00`, quindi soluzione già normalizzata, viene sommata la costante `00` in modo da non mutare il valore che sarà memorizzato nel registro.
